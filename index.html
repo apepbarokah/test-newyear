@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <title>Tahun Baru Bersamamu ❤️</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="stars" id="starsContainer"></div>
+
+    <audio id="bgMusic" loop>
+      <source src="Chrisye - Untukku [iMJwnC2YhlA].mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Screen 1: Welcome -->
+    <div class="screen" id="screen1">
+      <div class="welcome-screen">
+        <div class="hearts">💝 ✨ 💖</div>
+        <h1>Selamat Tahun Baru 2025!</h1>
+        <p class="welcome-message">Untuk Kekasihku Tersayang ❤️</p>
+        <p class="countdown">Aku punya sesuatu yang spesial untukmu...</p>
+        <button class="action-button" onclick="goToScreen2()">
+          <span style="position: relative; z-index: 1">💖 Buka Pesanku 💖</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Screen 2: Love Message -->
+    <div class="screen hidden" id="screen2">
+      <div class="message-screen">
+        <div class="hearts">💕 💝 💗 💖 💕</div>
+        <h2 class="love-title">Untuk Cinta Hidupku 💕</h2>
+        <div class="love-content">
+          <p>💝 <strong>Sayangku,</strong></p>
+          <p>
+            Di tahun yang baru ini, aku ingin menghabiskan setiap momennya
+            bersamamu. Kamu adalah cahaya dalam hidupku, alasan aku tersenyum
+            setiap hari, dan sumber kebahagiaan terbesar dalam hidupku.
+          </p>
+          <p>
+            Setiap detik bersamamu adalah hadiah terindah yang pernah aku
+            terima. Mari kita buat tahun ini penuh dengan kenangan manis, tawa
+            yang hangat, petualangan seru, dan cinta yang tak terbatas.
+          </p>
+          <p>
+            Terima kasih sudah menjadi bagian terpenting dalam hidupku. Terima
+            kasih untuk setiap senyuman, setiap pelukan, dan setiap momen indah
+            yang kita lalui bersama.
+          </p>
+          <p>
+            <strong>Aku mencintaimu sekarang dan selamanya. ❤️</strong>
+          </p>
+        </div>
+        <p class="love-signature">
+          Dengan cinta yang tulus,<br />
+          Dari orang yang mencintaimu 💕
+        </p>
+        <button class="action-button" onclick="goToScreen3()">
+          <span style="position: relative; z-index: 1"
+            >🎆 Lihat Kejutannya 🎆</span
+          >
+        </button>
+      </div>
+    </div>
+
+    <!-- Screen 3: Fireworks -->
+    <div class="fireworks-container hidden" id="screen3">
+      <canvas id="canvas"></canvas>
+
+      <div class="music-control">
+        <button
+          class="music-btn"
+          id="musicToggle"
+          onclick="toggleMusic()"
+          title="Music On/Off"
+        >
+          🎵
+        </button>
+      </div>
+
+      <div class="controls">
+        <button class="control-btn" onclick="togglePause()" title="Pause/Play">
+          ⏸️
+        </button>
+        <button class="control-btn" onclick="toggleSettings()" title="Settings">
+          ⚙️
+        </button>
+      </div>
+
+      <div class="settings-panel" id="settingsPanel">
+        <button class="close-settings" onclick="toggleSettings()">×</button>
+        <h2>⚙️ Pengaturan</h2>
+
+        <div class="setting-item">
+          <label>💥 Ukuran Kembang Api</label>
+          <select id="sizeSelect" onchange="updateSettings()">
+            <option value="1">Kecil</option>
+            <option value="2">Sedang</option>
+            <option value="3" selected>Besar</option>
+            <option value="4">Sangat Besar</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <label>⚡ Kecepatan</label>
+          <input
+            type="range"
+            id="speedRange"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+            onchange="updateSettings()"
+          />
+        </div>
+
+        <div class="setting-item">
+          <label>
+            <input
+              type="checkbox"
+              id="autoLaunch"
+              checked
+              onchange="updateSettings()"
+            />
+            🚀 Peluncuran Otomatis
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <label>🎨 Warna Tema</label>
+          <select id="colorSelect" onchange="updateSettings()">
+            <option value="romantic" selected>Romantis (Merah & Pink)</option>
+            <option value="golden">Emas & Perak</option>
+            <option value="rainbow">Pelangi</option>
+            <option value="royal">Royal (Ungu & Biru)</option>
+            <option value="passion">Passion (Merah)</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <label>💫 Intensitas</label>
+          <select id="intensitySelect" onchange="updateSettings()">
+            <option value="low">Rendah</option>
+            <option value="medium" selected>Sedang</option>
+            <option value="high">Tinggi</option>
+            <option value="extreme">Ekstrim</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
